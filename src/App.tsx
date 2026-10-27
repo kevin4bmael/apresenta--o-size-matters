@@ -20,7 +20,6 @@ export default function App() {
 
   const slide = slides[currentSlide];
   
-  // SOLUÇÃO CRUCIAL PARA NÃO CRASHAR O REACT (Hooks encapsulados por slide)
   const PlaygroundComponent = slide.playground; 
 
   return (
@@ -29,7 +28,6 @@ export default function App() {
 
       <main className="flex-1 flex pt-24 px-8 pb-8 gap-12 max-w-[1600px] mx-auto w-full h-[100vh]">
         
-        {/* Coluna Esquerda: Conteúdo */}
         <div className="flex-1 flex flex-col justify-center pr-8 relative">
           <div className="absolute top-1/2 -translate-y-1/2 -left-32 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
           
@@ -70,7 +68,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Coluna Direita: Playground Interativo */}
         <div className="flex-1 bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-2xl relative overflow-hidden flex flex-col">
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 opacity-50" />
           
@@ -82,7 +79,6 @@ export default function App() {
           </div>
 
           <div className="flex-1 w-full">
-            {/* O componente agora é montado/desmontado corretamente */}
             <PlaygroundComponent />
           </div>
         </div>
